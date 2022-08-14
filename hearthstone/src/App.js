@@ -1,22 +1,28 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react'
 import './App.css';
 
 function App() {
+  const hearth = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'e89b1384b7msh1ee735c6ea1f437p130246jsnf3526df51361',
+      'X-RapidAPI-Host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
+    }
+  } 
+
+  //const [card, setCard] = useState('')
+
+  useEffect(() => {
+    fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/info', hearth)
+      .then(r => r.json())
+      .then(data => console.log(data))
+  }, [])
+
   return (
     <div className="App">
+      {console.log('app rendering')}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Header</h1>
       </header>
     </div>
   );
