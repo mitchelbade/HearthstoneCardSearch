@@ -10,9 +10,14 @@ function App() {
     }
   } 
 
-  //const [card, setCard] = useState('')
+  //const [card, setCard] = useState()
+  //const [type, setType] = useState()
+  //const [class, setClass] = useState()
+  //const [race, setRace] = useState()
+  //const [set, setSet] = useState()
+  //const [seach, setSearch] = useState()
 
-  useEffect(() => {
+  useEffect((card, ) => {
     fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/info', hearth)
       .then(r => r.json())
       .then(data => console.log(data))
